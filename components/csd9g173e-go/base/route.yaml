@@ -1,0 +1,18 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata: 
+  labels: 
+    app.kubernetes.io/instance: csd9g173e-go
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: csd9g173e-go 
+  name: csd9g173e-go
+spec:
+  port:
+    targetPort: 8081 
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: edge
+  to:
+    kind: Service
+    name: csd9g173e-go
+    weight: 100 

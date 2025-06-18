@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: csd9g173e-go-gitops
+  description: This is GitOps manifest for csd9g173e-go   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=csd9g173e-go
+    backstage.io/kubernetes-id: csd9g173e-go 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: csd9g173e-go
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:csd9g173e-go
